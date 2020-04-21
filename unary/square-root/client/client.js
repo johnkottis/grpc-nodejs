@@ -7,20 +7,17 @@ function getRPCDeadline(rpcType) {
 
     timeAllowed = 5000
     switch (rpcType) {
-
         case 1:
-            timeAllowed = 5000  // LIGHT RPC
+            timeAllowed = 5000
             break
-
         case 2:
-            timeAllowed = 7000  // HEAVY RPC
+            timeAllowed = 7000
             break
-
         default:
             console.log("Invalid RPC Type: Using Default Timeout")
-
     }
 
+    // deadline = timestamp + waiting time
     return new Date(Date.now() + timeAllowed)
 
 }
