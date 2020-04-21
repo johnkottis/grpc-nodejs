@@ -1,0 +1,31 @@
+{
+  "name": "grpc-boilerplate",
+  "version": "1.0.0",
+  "description": "gRPC boilerplate",
+  "main": "index.js",
+  "dependencies": {
+    "google-protobuf": "^3.11.4",
+    "grpc": "^1.24.2",
+    "grpc-tools": "^1.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnkottis/grpc-boilerplate.git"
+  },
+  "keywords": [
+    "grpc",
+    "microservices",
+    "api",
+    "development"
+  ],
+  "author": "John Kottis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnkottis/grpc-boilerplate/issues"
+  },
+  "homepage": "https://github.com/johnkottis/grpc-boilerplate#readme"
+}

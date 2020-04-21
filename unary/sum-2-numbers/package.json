@@ -1,0 +1,22 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "calculator RPC API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gRPC",
+    "node.js",
+    "mathematics"
+  ],
+  "author": "John Kottis",
+  "license": "ISC",
+  "dependencies": {
+    "google-protobuf": "^3.11.4",
+    "grpc": "^1.24.2",
+    "grpc-tools": "^1.8.1",
+    "nodemon": "^2.0.3"
+  }
+}
