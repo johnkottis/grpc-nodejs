@@ -1,6 +1,2 @@
-boilerplate/node_nodules/
-boilerplate/package-lock.json
-square-root/node_nodules/
-square-root/package-lock.json
-add-2-numbers/node_nodules/
-add-2-numbers/package-lock.json
+node_modules/
+package-lock.json

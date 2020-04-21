@@ -13,10 +13,14 @@ function main() {
     var req = new schoolMethods.Teacher();
     var res = new schoolMethods.Student();
     // pass parameters to the request
-    req.setQuestion(16);
+    req.setQuestion(-16);
     // echo resposnse
     client.sqrt(req, (error, res)=>{
-        console.log('sqrt is '+ res)
+        if (error) {
+            console.error(error.message + ' - ' + error.code);
+        } else {
+            console.log('sqrt is '+ res)
+        }
     });
 }
 
