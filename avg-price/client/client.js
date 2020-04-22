@@ -10,7 +10,7 @@ function main() {
     );
     // create request entity
     var req = new calcMethods.AvgReq();
-    req.setNumbersList([10,2,8]);
+    req.setNumbersList([1,2,6]);
 
     //create call entity
     var call = client.avgSrv(req, (err, res) => {

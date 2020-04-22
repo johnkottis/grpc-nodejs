@@ -3,10 +3,12 @@ var calcMethods = require("../server/protos/calculator_pb");
 var grpc = require("grpc");
 
 function avgSrv(call, callback) {
+    var numbers;
+    var avdNumber=0;
     // callback once you receive the data
     call.on("data", req => {
         console.log("Request Reveived: ", req);
-        var numbers = req.getNumbersList();
+        numbers = req.getNumbersList();
         console.log("numbers Reveived: ", numbers);
     });
     // error logging
@@ -15,9 +17,13 @@ function avgSrv(call, callback) {
     });
     // create and send response once all data are received
     call.on("end", () => {
+        var total = 0;
+        for (var i=0; i<numbers.length;i++){
+            total+=numbers[i];
+        }
  
         var res = new calcMethods.AvgRes();
-        res.setAvgPrice(5);
+        res.setAvgPrice(total/numbers.length);
 
         callback(null, res);
         console.log("Finished!");
