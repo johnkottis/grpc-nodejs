@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package calculator;
+
+// Service avgSrv
+service CalculatorSrv {
+  rpc avgSrv(stream AvgReq) returns (AvgRes) {};
+}
+
+// Request AvgReq
+message AvgReq { repeated int32 numbers = 1; }
+// Response AvgRes
+message AvgRes { double avg_price = 1; }
