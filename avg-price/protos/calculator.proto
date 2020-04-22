@@ -8,6 +8,6 @@ service CalculatorSrv {
 }
 
 // Request AvgReq
-message AvgReq { repeated int32 numbers = 1; }
+message AvgReq { int32 numbers = 1; }
 // Response AvgRes
 message AvgRes { double avg_price = 1; }

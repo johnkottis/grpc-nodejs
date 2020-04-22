@@ -25,7 +25,7 @@ goog.exportSymbol('proto.calculator.AvgRes', null, global);
  * @constructor
  */
 proto.calculator.AvgReq = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.calculator.AvgReq.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.calculator.AvgReq, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -56,13 +56,6 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.calculator.AvgRes.displayName = 'proto.calculator.AvgRes';
 }
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.calculator.AvgReq.repeatedFields_ = [1];
 
 
 
@@ -95,7 +88,7 @@ proto.calculator.AvgReq.prototype.toObject = function(opt_includeInstance) {
  */
 proto.calculator.AvgReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    numbersList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+    numbers: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -133,8 +126,8 @@ proto.calculator.AvgReq.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
-      msg.setNumbersList(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setNumbers(value);
       break;
     default:
       reader.skipField();
@@ -165,9 +158,9 @@ proto.calculator.AvgReq.prototype.serializeBinary = function() {
  */
 proto.calculator.AvgReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNumbersList();
-  if (f.length > 0) {
-    writer.writePackedInt32(
+  f = message.getNumbers();
+  if (f !== 0) {
+    writer.writeInt32(
       1,
       f
     );
@@ -176,39 +169,20 @@ proto.calculator.AvgReq.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * repeated int32 numbers = 1;
- * @return {!Array<number>}
+ * optional int32 numbers = 1;
+ * @return {number}
  */
-proto.calculator.AvgReq.prototype.getNumbersList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
-};
-
-
-/**
- * @param {!Array<number>} value
- * @return {!proto.calculator.AvgReq} returns this
- */
-proto.calculator.AvgReq.prototype.setNumbersList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+proto.calculator.AvgReq.prototype.getNumbers = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @param {number=} opt_index
  * @return {!proto.calculator.AvgReq} returns this
  */
-proto.calculator.AvgReq.prototype.addNumbers = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.calculator.AvgReq} returns this
- */
-proto.calculator.AvgReq.prototype.clearNumbersList = function() {
-  return this.setNumbersList([]);
+proto.calculator.AvgReq.prototype.setNumbers = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
