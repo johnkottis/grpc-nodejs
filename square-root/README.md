@@ -14,7 +14,7 @@ node.js
 Run the following command:
 
 ```javascript
-protoc -I=. ./protos/school.proto \
+protoc -I=. ./protos/mathematics.proto \
   --js_out=import_style=commonjs,binary:./server \
   --grpc_out=./server \
   --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin`

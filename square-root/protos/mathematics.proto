@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package mathematics;
+
+service Test {
+    // Unary Service
+    rpc sqrt (Problem) returns (Solution) {};
+    
+    // Streaming Service
+    rpc sqrtStrm (ProblemAll) returns (stream SolutionAll) {}; 
+}
+
+// Unary Request
+message Problem {
+    int32 question = 1;
+}
+// Unary Response
+message Solution {
+    double answer = 1;
+}
+// Request for Stream Response
+message ProblemAll {
+    int32 question = 1;
+}
+// Stream Response
+message SolutionAll {
+    double answer = 1;
+}
+
