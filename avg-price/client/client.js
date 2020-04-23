@@ -10,28 +10,25 @@ function main() {
     );
     // create request entity
     var req = new calcMethods.AvgReq();
-
-    
-
     //create call entity
     var call = client.avgSrv(req, (err, res) => {
         if (!err) {
-            console.log('Got the response: ', res.getAvgPrice())
+            console.log('Got the response: ', res.getAvgPrice());
         } else {
             console.log("finished with error: " + err);
         }
     });
 
-    // implement interval to simulate the streaming delay
+    // Simulate transmition
     let count = 0;
     intervalId = setInterval(function () {
         req.setNumbers(Math.floor(Math.random() * 10));
-        // create the stream
+        // Start streaming
         call.write(req);
         console.log('My request was: ', req.getNumbers())
         if (++count > 3) {
             clearInterval(intervalId)
-            // notify that the streaming has now ended
+            // Stop streaming
             call.end();
         }
     }, 1000);

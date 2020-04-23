@@ -1,14 +1,14 @@
 # Project Title
 
-Client Streaming gRPC and node.js API
+Average price calulator API - Getting Stream from Client
 
 ## Getting Started
 
-Client Streaming gRPC and node.js API
+Average price calulator API - Getting Stream from Client
 
 ### Prerequisites
 
-node.js
+Install node.js
 
 ### Code Generation
 Run the following command:
